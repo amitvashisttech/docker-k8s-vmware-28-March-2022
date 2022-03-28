@@ -1,0 +1,29 @@
+    1  git clone https://github.com/amitvashisttech/docker-k8s-vmware-28-March-2022.git
+    2  ls
+    3  cd docker-k8s-vmware-28-March-2022/
+    4  ls
+    5  history 
+    6  ls
+    7  mkdir 01-Docker
+    8  ls
+    9  cd 01-Docker/
+   10  ls
+   11  mkdir 00-Setup 
+   12  ls
+   13  cd 00-Setup/
+   14  ls
+   15  vim install-docker.sh 
+   16  ls
+   17  chmod +x install-docker.sh 
+   18  ls
+   19  ls -ltr 
+   20  sh install-docker.sh 
+   21  ls
+   22  docker version 
+   23  ls
+   24  cd ..
+   25  ls
+   26  cd ..
+   27  ls
+   28  mkdir 00-History.txt 
+   29  history > 00-History.txt/Day1_History.txt 
