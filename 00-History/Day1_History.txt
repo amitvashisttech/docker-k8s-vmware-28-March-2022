@@ -79,3 +79,87 @@
    79  cd docker-k8s-vmware-28-March-2022/
    80  ls
    81  history > 00-History/Day1_History.txt 
+   82  ls
+   83  git add . ; git commit -m "00-History" ; git push 
+   84  ls
+   85  cat 00-History/Day1_History.txt 
+   86  docker images 
+   87  docker run -it ubuntu:latest
+   88  docker ps -a 
+   89  history 
+   90  docker ps 
+   91  docker run ubuntu echo "Hello World" 
+   92  docker ps 
+   93  docker container ls 
+   94  docker ps -a 
+   95  docker container ls -a 
+   96  docker run --name test-1 ubuntu echo "Hello World" 
+   97  docker container ls -a 
+   98  docker run --name test-2 ubuntu 
+   99  docker ps 
+  100  docker ps 0a 
+  101  docker ps -a 
+  102  docker run -it --name test-2 ubuntu 
+  103  docker run -it --name test-3 ubuntu 
+  104  docker ps 
+  105  docker ps -a
+  106  docker start test-3
+  107  docker ps 
+  108  docker container ls 
+  109  docker attach test-3
+  110  docker container ls 
+  111  docker attach test-3
+  112  docker ps 
+  113  docker attach test-3
+  114  docker ps 
+  115  docker inspect test-3
+  116  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' test-3
+  117  docker ps -l 
+  118  docker ps -a 
+  119  docker ps 
+  120  docker ps -l 
+  121  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' test-3
+  122  docker run -itd --name test-4 ubuntu 
+  123  docker run -itd --name test-5 ubuntu 
+  124  docker run -itd --name test-6 ubuntu 
+  125  docker run -itd --name test-7 ubuntu 
+  126  docker ps 
+  127  docker ps -a
+  128  docker ps -l 
+  129  docker ps 
+  130  docker ps -q
+  131  docker inspect $(docker ps -q) 
+  132  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q) 
+  133  docker ps -a 
+  134  docker ps -q
+  135  docker ps -qa
+  136  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -aq) 
+  137  docker start test-1 
+  138  docker start test-2
+  139  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -aq) 
+  140  docker ps -a
+  141  docker ps 
+  142  ls
+  143  docker ps -a 
+  144  docker kill test-6
+  145  docker stop test-5
+  146  docker ps -a 
+  147  docker kill $(docker ps -q) 
+  148  docker kill $(docker ps -aq) 
+  149  docker ps 
+  150  docker ps -a 
+  151  docker start test-3
+  152  ls
+  153  docker attach  test-3
+  154  docker ps -a 
+  155  docker rm test-3
+  156  docker ps -a 
+  157  docker rm $(docker ps -qa) 
+  158  docker ps -a 
+  159  docker images 
+  160  ls
+  161  history 
+  162  ls
+  163  cd 00-History/
+  164  ls
+  165  history > Day1_History.txt 
