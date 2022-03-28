@@ -163,3 +163,106 @@
   163  cd 00-History/
   164  ls
   165  history > Day1_History.txt 
+  166  git add . ; git commit -m "00-History" ; git push 
+  167  cd
+  168  cd -
+  169  cd ..
+  170  ls
+  171  git config --global credential.helper 'cache --timeout=360000'
+  172  vim /root/.bashrc 
+  173  git add . ; git commit -m "00-History" ; git push 
+  174  docker run -it --name test-1 ubuntu
+  175  docker ps 
+  176  docker inspect test-1
+  177  docker ps 
+  178  docker attach test-1
+  179  ls
+  180  cd /var/lib/docker/
+  181  ls
+  182  grep -ri hello.txt 
+  183  cd containers/
+  184  ls
+  185  docker ps 
+  186  cd 
+  187  ls
+  188  docker run -it --name test-apache-v1 ubuntu:16.04
+  189  docker ps 
+  190  docker inspect test-apache-v1
+  191  curl 172.17.0.3:80
+  192  docker attach  test-apache-v1
+  193  curl 172.17.0.3:80
+  194  docker attach  test-apache-v1
+  195  curl 172.17.0.3:80
+  196  docker attach  test-apache-v1
+  197  docker ps 
+  198  curl 172.17.0.3:80
+  199  docker ps 
+  200  docker commit -p -m "My First Image from Container - Apache" 5cbda677e1b9 my-apache-ubuntu:v1
+  201  docker ps 
+  202  docker images 
+  203  docker run -itd --name test-apache-1 my-apache-ubuntu:v1 
+  204  docker ps 
+  205  docker run -itd --name test-apache-2 my-apache-ubuntu:v1 
+  206  docker ps 
+  207  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -aq) 
+  208  curl 172.17.0.3:80
+  209  curl 172.17.0.4:80
+  210  curl 172.17.0.5:80
+  211  ls
+  212  cd docker-k8s-vmware-28-March-2022/
+  213  ls
+  214  cd 01-Docker/
+  215  ls
+  216  mkdir 01-DockerFile
+  217  ls
+  218  cd 01-DockerFile/
+  219  ls
+  220  mkdir apache/v1
+  221  mkdir apache/v1 -p 
+  222  ls
+  223  cd apache/v1/
+  224  ls
+  225  vim Dockerfile 
+  226  ls
+  227  docker images 
+  228  docker build -t myapache:v1 . 
+  229  ls
+  230  docker images 
+  231  docker run -d --name test-df-ap-1 myapache:v1 
+  232  docker ps 
+  233  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -aq) 
+  234  curl 172.17.0.5 
+  235  curl 172.17.0.6
+  236  curl 172.17.0.5 
+  237  ls
+  238  cd ..
+  239  ls
+  240  cp -rf v1 v2
+  241  ls
+  242  cd ls
+  243  ls
+  244  cd v2/
+  245  ls
+  246  vim index.html
+  247  ls
+  248  vim Dockerfile 
+  249  ls
+  250  docker build -t myapache:v2 . 
+  251  docker images 
+  252  docker run -d --name test-df-ap-2 myapache:v2
+  253  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -aq) 
+  254  curl 172.17.0.5 
+  255  curl 172.17.0.6
+  256  curl 172.17.0.7
+  257  ls
+  258  cat Dockerfile 
+  259  ls
+  260  cd ..
+  261  ls
+  262  cd ..
+  263  ls
+  264  cd ..
+  265  ls
+  266  cd ..
+  267  ls
+  268  history > 00-History/Day1_History.txt 
