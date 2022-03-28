@@ -27,3 +27,55 @@
    27  ls
    28  mkdir 00-History.txt 
    29  history > 00-History.txt/Day1_History.txt 
+   30  ls
+   31  mv 00-History.txt 00-History
+   32  ls
+   33  git add . ; git commit -m "00-History" ; git push 
+   34  cd 
+   35  ls
+   36  cd docker-k8s-vmware-28-March-2022/
+   37  ls
+   38  git pull 
+   39  ls
+   40  docker ps 
+   41  docker version 
+   42  docker run busybox echo "Hello World" 
+   43  docker run busybox echo "Welcome to the world of Docker" 
+   44  docker ps 
+   45  docker ps -a 
+   46  docker run busybox "ps -ef"  
+   47  docker run busybox  ps   
+   48  docker run busybox  ps  -rf 
+   49  docker run busybox  ps -ef
+   50  docker ps -a 
+   51  docker images 
+   52  docker run ubuntu echo "Hello Ubuntu" 
+   53  docker ps 
+   54  docker ps -a
+   55  docker pull ubuntu:16.04  
+   56  docker images 
+   57  cat /etc/os-release 
+   58  docker run ubuntu 
+   59  docker run ubuntu cat /etc/os-release
+   60  docker run ubuntu:16.04 cat /etc/os-release
+   61  docker images 
+   62  docker pull amitvashist7/myapache-benz-31-jan-2022:v1 
+   63  l
+   64  docker ps 
+   65  docker images 
+   66  docker pull amitvashist7/apache-ex4
+   67  docker login 
+   68  docker pull amitvashist7/apache-ex4
+   69  docker images 
+   70  docker logout 
+   71  ls
+   72  docker images 
+   73  docker logout 
+   74  docker rmi amitvashist7/apache-ex4
+   75  docker images 
+   76  docker pull amitvashist7/apache-ex4
+   77  ls
+   78  cd ..
+   79  cd docker-k8s-vmware-28-March-2022/
+   80  ls
+   81  history > 00-History/Day1_History.txt 
