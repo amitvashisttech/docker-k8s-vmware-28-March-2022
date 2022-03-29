@@ -207,3 +207,85 @@
    92  vim README.md 
    93  history >> README.md 
 ```
+
+```
+  100  git add . ; git commit -m "Network" ; git push 
+  101  docker network 
+  102  docker network ls 
+  103  docker ps -a 
+  104  docker run -itd --name net-tools ubuntu:16.04
+  179  docker exec -it net-tools apt-get update
+  182  docker exec -it net-tools apt-get install net-tools -y
+  105  docker ps 
+  106  docker commit -p -m "Network Tools Installed" net-tools ubuntu-nettool:v1
+  107  docker images 
+  108  docker kill $(docker ps -qa) 
+  109  docker rm  $(docker ps -qa) 
+  110  docker network ls 
+  111  docker run -d --name test-1 -P --network mybr0 ubuntu-nettools:v1 
+  112  docker images 
+  113  docker run -d --name test-2 -P --network mybr0 ubuntu-nettool:v1 
+  114  docker ps 
+  115  docker run -itd --name test-3 -P --network mybr0 ubuntu-nettool:v1 
+  116  docker ps 
+  117  docker inspect test-3
+  118  docker ps 
+  119  docker exec -it test-3 ifconfig 
+  120  docker exec -it test-3 route -n 
+  121  docker network ls 
+  122  docker run -itd --name test-4 -P --network none ubuntu-nettool:v1 
+  123  docker ps 
+  124  docker inspect test-4
+  125  docker exec -it test-4 ifconfig 
+  126  docker exec -it test-3 ifconfig 
+  127  docker ps 
+  128  docker run -itd --name test-5 -P --network host ubuntu-nettool:v1 
+  129  docker ps 
+  130  docker exec -it test-5 ifconfig 
+  131  docker ps 
+  132  docker images 
+  133  docker run -itd --name test-6  --network host myapache:v4 
+  134  docker ps 
+  135  docker inspect test-6
+  136  docker ps 
+  137  netstat -tulnp 
+  138  docker run -itd --name test-7  -P myapache:v4 
+  139  netstat -tulnp 
+  140  docker ps 
+  141  docker inspect 045d6c449170
+  142  docker inspect 045d6c449170 | grep -i expose 
+  143  docker inspect 045d6c449170 | grep -iA5 expose 
+  144  netstat -tunlp 
+  145  docker ps 
+  146  docker run -d myapache:v2 
+  147  docker ps 
+  148  docker inspect 76124908a38a
+  149  telnet 172.17.0.3 5001 
+  150  docker images 
+  151  sl
+  152  ls
+  153  cd 01-Docker/
+  154  ls
+  155  cd 01-DockerFile/
+  156  ls
+  157  cd python/
+  158  ls
+  159  cat app.py 
+  160  vim app.py 
+  161  docker build -t mypyapp:v2 . 
+  162  docker run -d mypyapp:v2 
+  163  docker ps 
+  164  docker run -d  --network host mypyapp:v2 
+  165  docker ps 
+  166  netstat -tulnp 
+  167  curl localhost:9001
+  168  curl localhost:5001
+  169  ls
+  170  cd ..
+  171  ls
+  172  cd ..
+  173  ls
+  174  cd 03-Docker-Network/
+  175  ls
+  176  history >> README.md 
+```
