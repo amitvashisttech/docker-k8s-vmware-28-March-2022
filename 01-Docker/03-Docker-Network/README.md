@@ -108,3 +108,102 @@
   106  history 03-Docker-Network/README.md 
   107  history > 03-Docker-Network/README.md 
 ```
+
+
+
+
+```
+    1  ls
+    2  cd docker-k8s-vmware-28-March-2022/
+    3  ls
+    4  docker ps 
+    5  docker images 
+    6  docker run -d --name test-1 -p 8080:80 myapache:v3 
+    7  docker ps 
+    8  docker run -d --name test-2 -P  myapache:v3 
+    9  docker ps 
+   10  docker run -d --name test-3 -P  myapache:v4 
+   11  docker ps 
+   12  netstat -tunlp
+   13  systemctl status docker 
+   14  docker ps 
+   15  grep -i format 00-History/Day1_History.txt 
+   16  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -aq)
+   17  docker network ls 
+   18  docker network inspect 52c80a851654
+   19  docker ps 
+   20  ls
+   21  cd 01-Docker/
+   22  ls
+   23  cd 01-DockerFile/
+   24  ls
+   25  mkdir python 
+   26  ls
+   27  cd python/
+   28  ls
+   29  vim app.
+   30  vim app.py 
+   31  ls
+   32  vim req.txt 
+   33  ls
+   34  vim Dockerfile
+   35  ls
+   36  docker build -t mypyapp:v1 . 
+   37  docker ps 
+   38  docker images 
+   39  docker run -d --name py-app-1 -P  mypyapp:v1 
+   40  docker ps 
+   41  docker images 
+   42  docker ps 
+   43  docker run -d --name py-app-2 -P  mypyapp:v1 
+   44  docker ps 
+   45  ls
+   46  cd 
+   47  ls
+   48  docker network ls 
+   49  docker ps 
+   50  docker kill 151fc93a313e df7e7b85c2dc 19b18cca9344 768999ff9d68
+   51  docker ps 
+   52  docker rm 151fc93a313e df7e7b85c2dc 19b18cca9344 768999ff9d68
+   53  docker network ls 
+   54  docker network create my-net 
+   55  docker network ls 
+   56  docker network inspect my-net
+   57  docker network ls 
+   58  docker run -d --name py-app-3 -P --network my-net mypyapp:v1 
+   59  docker ps 
+   60  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -aq)
+   61  docker inspect py-app-3
+   62  curl 172.18.0.2:5001
+   63  docker network ls 
+   64  docker network inspect my-net
+   65  ip addr 
+   66  docker network create --help
+   67  docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.1/24 --gateway=172.28.5.254 mybr0 
+   68  docker network ls 
+   69  docker network inspect mybr0   
+   70  docker run -d --name py-app-4 -P --network mybr0 mypyapp:v1 
+   71  docker run -d --name py-app-5 -P --network mybr0 mypyapp:v1 
+   72  docker ps 
+   73  docker network inspect mybr0   
+   74  ip addr 
+   75  ls
+   76  docker kill $(docker ps -qa) 
+   77  docker rm $(docker ps -qa) 
+   78  ls
+   79  docker network ls 
+   80  docker network rm my-net 
+   81  docker network ls 
+   82  ls
+   83  cd docker-k8s-vmware-28-March-2022/
+   84  ls
+   85  cd 01-Docker/
+   86  ls
+   87  cd 03-Docker-Network/
+   88  ls
+   89  history 
+   90  ls
+   91  >> README.md 
+   92  vim README.md 
+   93  history >> README.md 
+```
