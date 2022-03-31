@@ -86,3 +86,30 @@
   207  ls
   208  history > README.md
 ```
+
+
+```
+334  kubectl scale --replicas=12 -f helloworld.yaml
+  335  kubectl set image deploy helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record
+  336  kubectl describe deploy
+  337  kubectl apply -f helloworld.yaml
+  338  kubectl apply -f helloworld-v2.yaml
+  339  kubectl delete -f helloworld.yaml
+  340  kubectl describe deploy
+  341  kubectl set image deploy helloworld-2-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record
+  342  kubectl set image deploy helloworld-2-deployment k8s-demo=amitvashist7/k8s-tiny-web:3 --record
+  343  kubectl delete -f helloworld-v2.yaml
+  344  kubectl get pods
+  345  ls
+  346  vim helloworld-v3.yaml
+  347  kubectl apply -f helloworld-v3.yaml
+  348  kubectl set image deploy helloworld-3-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record
+  349  kubectl set image deploy helloworld-3-deployment k8s-demo=amitvashist7/k8s-tiny-web:3 --record
+  350  kubectl  get deploy
+  351  kubectl  rollout status  deploy helloworld-3-deployment
+  352  kubectl  rollout history  deploy helloworld-3-deployment
+  353  kubectl  rollout undo  deploy helloworld-3-deployment
+  354  kubectl  rollout history  deploy helloworld-3-deployment
+  355  kubectl  get rs
+  356  kubectl  delete -f helloworld-v3.yaml
+```
