@@ -26,3 +26,32 @@
   587  kubectl  get pods -o wide
   588  kubectl scale --replicas=3 deploy toleration-deployment
 ```
+
+```
+599  kubectl  get pods
+  600  kubectl scale --replicas=1 deploy toleration-deployment
+  601  kubectl scale --replicas=1 deploy helloworld-deployment
+  602  ls
+  603  kubectl  get pods
+  604  cd 02-K8s/10-Taint-and-Toleration/
+  605  ls
+  606  vim 03-helloworld-toleration-2.yaml
+  607  kubectl apply -f 03-helloworld-toleration-2.yaml
+  608  kubectl  get pods -o wide
+  609  kubectl taint nodes worker1 example2=example2-key:NoExecute
+  610  kubectl describe nodes | grep -i taint
+  611  kubectl describe nodes worker1 | grep -i taint
+  612  kubectl describe nodes worker1 | grep -iA2 taint
+  613  kubectl  get pods -o wide
+  614  ls
+  615  vim 04-helloworld-toleration-3.yaml
+  616  kubectl  apply -f 04-helloworld-toleration-3.yaml
+  617  kubectl  get pods -o wide
+  618  kubectl delete -f ../10-Taint-and-Toleration/
+  619  kubectl describe nodes worker1 | grep -iA2 taint
+  620  kubectl taint nodes worker1 example2-
+  621  kubectl taint nodes worker1 example-
+  622  kubectl describe nodes  | grep -iA2 taint
+  623  kubectl taint nodes worker2 app-
+  624  kubectl describe nodes  | grep -iA2 taint
+```
